@@ -12,3 +12,24 @@ spec:
     - nodePort: 30000
       port: 8080
       targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-service
+spec:
+  selector:
+    matchLabels:
+      app: my-service
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-service
+    spec:
+      containers:
+      - name: javawebapp
+        image: javawebapp:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
