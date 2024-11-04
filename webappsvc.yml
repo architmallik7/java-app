@@ -28,8 +28,8 @@ spec:
         app: my-service
     spec:
       containers:
-      - name: javawebapp
-        image: javawebapp:latest
+      - name: myjavawebapp
+        image: architmallik/demo:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
